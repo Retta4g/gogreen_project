@@ -1,7 +1,7 @@
 # Variable for bucket name prefix
 variable "bucket_name_prefix" {
   description = "Prefix for the S3 bucket name"
-  default     = "fusion-gogreen1234858"
+  default     = "fusion-gogreen1234859"
 }
 
 # Generate a random suffix for the S3 bucket name

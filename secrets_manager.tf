@@ -1,15 +1,15 @@
 # Create a Secrets Manager secret for storing user credentials
 resource "aws_secretsmanager_secret" "users" {
-  name = "new-unique-secret-name06"
+  name = "new-unique-secret-name07"
 }
 
 # Create a dynamic secret string that includes usernames and passwords for IAM users
 resource "aws_secretsmanager_secret_version" "users" {
-  secret_id     = aws_secretsmanager_secret.users.id
+  secret_id = aws_secretsmanager_secret.users.id
 
   # Dynamically generate a secret string that combines the created users and their passwords
   secret_string = jsonencode({
-    for username, name_value in module.iam_users.created_users : 
+    for username, name_value in module.iam_users.created_users :
     username => {
       username = name_value,
       password = var.user_passwords[username]  # Match password for the corresponding username
@@ -19,7 +19,7 @@ resource "aws_secretsmanager_secret_version" "users" {
 
 # Create a Secrets Manager secret specifically for RDS password
 resource "aws_secretsmanager_secret" "rds_password_secret" {
-  name        = "go-green-db-password-v4"  # Updated name to avoid conflict
+  name        = "go-green-db-password-v7"  # Changed name to avoid conflict
   description = "Password for GoGreen RDS instance"
 }
 
