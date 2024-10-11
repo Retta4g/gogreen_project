@@ -3,7 +3,7 @@ terraform {
     organization = "02-spring-cloud"
 
     workspaces {
-      name = "Gogreen_Project"
+      name = "Fusion_Cloudwork"
     }
   }
   required_providers {
