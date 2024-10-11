@@ -21,7 +21,7 @@ resource "aws_launch_template" "app" {
   name_prefix   = "app-tier-"
   image_id      = "ami-047d7c33f6e7b4bc4"
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.deployer.key_name
+  # key_name      = aws_key_pair.deployer.key_name
 
   network_interfaces {
     associate_public_ip_address = false

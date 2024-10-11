@@ -41,7 +41,7 @@ resource "aws_launch_template" "ec2_launch_template" {
 
   image_id      = "ami-047d7c33f6e7b4bc4"  # Replace with your desired AMI ID
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.deployer.key_name
+  # key_name      = aws_key_pair.deployer.key_name
   network_interfaces {
     associate_public_ip_address = true
     security_groups             = [aws_security_group.web_sg.id]

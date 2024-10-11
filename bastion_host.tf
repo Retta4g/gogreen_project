@@ -4,7 +4,7 @@ resource "aws_instance" "bastion_host" {
  
   vpc_security_group_ids = [aws_security_group.bastion_sg.id]
   subnet_id              = aws_subnet.public_subnet[0].id  # Use the first public subnet
-  key_name = aws_key_pair.deployer.key_name
+  # key_name = aws_key_pair.deployer.key_name
  
    associate_public_ip_address = true
  
